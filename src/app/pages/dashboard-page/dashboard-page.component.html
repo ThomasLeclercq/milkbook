@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+	<mat-toolbar-row>
+	  <span>Layouts</span>		
+	</mat-toolbar-row>
+</mat-toolbar>
+
+<div class="filters">
+	<app-theme-selector class="half"></app-theme-selector>
+	<app-layouts-type-selector class="half"></app-layouts-type-selector>
+</div>
+<mat-progress-bar mode="indeterminate" *ngIf="( loading$ | async )"></mat-progress-bar>
+
+<app-layout-list 
+	[section]="section" 
+	*ngIf="( section$ | async ) as section"
+></app-layout-list>

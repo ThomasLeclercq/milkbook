@@ -1,0 +1,8 @@
+<div id="theme-input-container">
+	<mat-form-field id="theme-input">
+		<input matInput #theme placeholder="Theme Input" [formControl]="themeControl" />
+		<mat-hint>Load theme based on name. Eg: 1, 2, 3, etc.</mat-hint>
+		<mat-error *ngIf="themeControl.hasError('required')">Please insert theme number</mat-error>
+	</mat-form-field>
+	<p class="error" *ngIf="( error$ | async )">{{ ( error$ | async ) }}</p>
+</div>

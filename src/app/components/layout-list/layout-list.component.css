@@ -1,0 +1,16 @@
+.layout-list
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 75%;
+	max-width: 1400px;
+	margin: auto;
+}
+.layout-container
+{
+	width: 45%;
+	margin: 15px 0;
+}
