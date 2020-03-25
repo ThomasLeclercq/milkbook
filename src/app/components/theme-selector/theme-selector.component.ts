@@ -10,26 +10,28 @@ import { Theme } from '../../services/types';
   templateUrl: './theme-selector.component.html',
   styleUrls: ['./theme-selector.component.css']
 })
+/*
+  Form component used to load a theme from Theme service
+  Uses options given in Theme service for selector
+  Subscribes to errors from theme service in case of error with Http requests
+*/
 export class ThemeSelectorComponent implements OnInit {
 
-	public themeControl = new FormControl("1", [Validators.required]);
-	public loading$: Observable<boolean>;
+  public selectedTheme: string;
+	public availableThemes: string[] = [];
 	public error$: Observable<string>;
-
 
   constructor(private themeService: ThemeService) { }
 
   ngOnInit() {
   	this.error$ = this.themeService.error$;
-  	this.changeThemeOnInput();
+    this.availableThemes = this.themeService.availableThemesNames;
+    this.selectedTheme = this.availableThemes[0];
   }
 
-  private changeThemeOnInput(): void {
-  	this.themeControl.valueChanges.subscribe( (value: string) => {
-  		if (value) {
-  			this.themeService.fetchThemeData(value);
-  		}
-  	});
+  public onSelectionChange($event): void {
+    this.selectedTheme = $event.value;
+    this.themeService.fetchThemeData(this.selectedTheme);
   }
 
 }

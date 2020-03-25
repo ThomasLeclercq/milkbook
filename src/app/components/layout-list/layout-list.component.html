@@ -1,4 +1,4 @@
-<div class="layout-list" *ngIf="section">
+<div class="layout-list" *ngIf="( layouts$ | async ).length > 0">
 	<div class="layout-container" 
 			 *ngFor="let layout of ( layouts$ | async )">
 		<p>{{ layout.Name }} - {{ layout.LayoutType }}</p>

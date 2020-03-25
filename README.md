@@ -1,5 +1,7 @@
 # CodingTestThomas
 
+This project use a themeURLs property in environment to load images and data
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.3.
 
 ## Development server

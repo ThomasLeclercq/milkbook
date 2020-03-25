@@ -7,6 +7,10 @@ import { Layout } from '../../services/types';
   templateUrl: './layouts-type-selector.component.html',
   styleUrls: ['./layouts-type-selector.component.css']
 })
+/*
+*  Provides a selector to filter layouts displayed
+*  Uses Layouts service to access and filter data
+*/
 export class LayoutsTypeSelectorComponent implements OnInit {
 
 	public selectedType: string = this.layoutsService.selectedType;

@@ -1,3 +1,5 @@
+// Provides types to components to respect typings and ease developer experience
+
 export interface Theme {
 	Id: string;
 	Name: string;

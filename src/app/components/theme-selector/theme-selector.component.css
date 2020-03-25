@@ -1,4 +1,9 @@
-#theme-input
+.selector
 {
 	width: 100%;
+}
+
+.error
+{
+	color: red;
 }
